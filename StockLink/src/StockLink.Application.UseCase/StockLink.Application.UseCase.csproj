@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Mapping\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.0" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StockLink.Application.Dtos\StockLink.Application.Dtos.csproj" />
+    <ProjectReference Include="..\StockLink.Application.Interface\StockLink.Application.Interface.csproj" />
+    <ProjectReference Include="..\StockLink.Domain\StockLink.Domain.csproj" />
+    <ProjectReference Include="..\StockLink.Utilities\StockLink.Utilities.csproj" />
+  </ItemGroup>
+
+</Project>

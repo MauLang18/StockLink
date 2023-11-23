@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StockLink.Application.Dtos\StockLink.Application.Dtos.csproj" />
+    <ProjectReference Include="..\StockLink.Domain\StockLink.Domain.csproj" />
+    <ProjectReference Include="..\StockLink.Utilities\StockLink.Utilities.csproj" />
+  </ItemGroup>
+
+</Project>
