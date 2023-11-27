@@ -1,7 +1,5 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using StockLink.Application.UseCase.UseCase.Articulo.Queries.GetAllQuery;
 using StockLink.Application.UseCase.UseCase.Familias.Queries.GetAll;
 
 namespace StockLink.Api.Controllers
