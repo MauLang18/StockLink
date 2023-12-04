@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using StockLink.Application._6.Dtos.Usuario.Request;
 using StockLink.Application._6.Interfaces;
@@ -31,6 +30,14 @@ namespace StockLink.Api.Controllers
         public async Task<IActionResult> UsuarioById(int id)
         {
             var response = await _usuarioApplication.UsuarioById(id);
+
+            return Ok(response);
+        }
+
+        [HttpGet("User/")]
+        public async Task<IActionResult> UsuarioByUser(string user)
+        {
+            var response = await _usuarioApplication.UsuarioByUser(user);
 
             return Ok(response);
         }

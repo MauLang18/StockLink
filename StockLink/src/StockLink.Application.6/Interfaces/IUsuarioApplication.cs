@@ -10,6 +10,7 @@ namespace StockLink.Application._6.Interfaces
     {
         Task<BaseResponse<BaseEntityResponse<UsuarioResponseDto>>> ListUsuarios(BaseFiltersRequest filters);
         Task<BaseResponse<UsuarioByIdResponseDto>> UsuarioById(int id);
+        Task<BaseResponse<UsuarioByIdResponseDto>> UsuarioByUser(string user);
         Task<BaseResponse<bool>> RegisterUsuario(UsuarioRequestDto requestDto);
         Task<BaseResponse<bool>> EditUsuario(int id, UsuarioRequestDto requestDto);
         Task<BaseResponse<bool>> RemoveUsuario(int id);
