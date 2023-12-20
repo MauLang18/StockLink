@@ -7,9 +7,9 @@ namespace StockLink.Persistence.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private readonly ApplicationDbContext _context;
+        private readonly Application2DbContext _context;
 
-        public GenericRepository(ApplicationDbContext context)
+        public GenericRepository(Application2DbContext context)
         {
             _context = context;
         }
@@ -28,8 +28,14 @@ namespace StockLink.Persistence.Repositories
 
             var objParam = new DynamicParameters(parameter);
 
-            return await connection
-                .QuerySingleOrDefaultAsync<T>(storedProcedure, param: objParam, commandType: CommandType.StoredProcedure)!;
+            var result = await connection.QuerySingleOrDefaultAsync<T>(storedProcedure, param: objParam, commandType: CommandType.StoredProcedure);
+
+            if (result == null)
+            {
+                throw new Exception("El resultado de la consulta es nulo.");
+            }
+
+            return result;
         }
 
         public async Task<bool> ExecAsync(string storedProcedure, object parameters)
